@@ -14,7 +14,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class AutoOpRed extends LinearOpMode {
     /* Declare OpMode members. */
     Hardware10603 robot = new Hardware10603();   // Use a Pushbot's hardware
-    OpticalDistanceSensor odsSensor;;
+    OpticalDistanceSensor odsSensor;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -40,7 +40,7 @@ public class AutoOpRed extends LinearOpMode {
 
         //Color Sensor Data Readout
         while (opModeIsActive()) {
-            if(odsSensor.getRawLightDetected() < 0.1 && hit == false){
+            if(odsSensor.getRawLightDetected() < 0.1){
                 /*telemetry.addData("Raw" , odsSensor.getRawLightDetected());
                 telemetry.addData("Normal", odsSensor.getLightDetected());
                 telemetry.addData("Red Left ", colorSensorLeft.red());
@@ -62,7 +62,6 @@ public class AutoOpRed extends LinearOpMode {
                 //}
             }
             else{
-                hit = true;
                 robot.leftPower.setPower(1.00);
                 robot.rightPower.setPower(-1.00);
                 robot.waitForTick(2000);
