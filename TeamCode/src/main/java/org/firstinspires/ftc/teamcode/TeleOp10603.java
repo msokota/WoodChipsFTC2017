@@ -26,6 +26,8 @@ public class TeleOp10603 extends LinearOpMode {
         double left;
         double right;
         double max;
+        boolean liftdrop;
+        boolean lift;
 
         /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
@@ -42,7 +44,9 @@ public class TeleOp10603 extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
             right = gamepad1.right_stick_y;
-            left = -gamepad1.left_stick_y;
+            left = gamepad1.left_stick_y;
+            liftdrop = gamepad1.b;
+            lift = gamepad1.a;
 
             max = Math.max(Math.abs(left), Math.abs(right));
             if (max > 1.0)
@@ -53,31 +57,13 @@ public class TeleOp10603 extends LinearOpMode {
             robot.rightPower.setPower(right);
             robot.leftPower.setPower(left);
 
-            //When A is pushed, motors will spin until the button is pressed again
-            if(gamepad1.a){
-                robot.leftLaunch.setPower(1.0);
-                robot.rightLaunch.setPower(-1.0);
-                telemetry.addData("Particle Launcher","Engaged");
-                telemetry.update();
-                if(gamepad1.a){
-                    robot.leftLaunch.setPower(0);
-                    robot.rightLaunch.setPower(0);
-                    telemetry.addData("Particle Launcher","Disengaged");
-                    telemetry.update();
-                }
+            if(liftdrop){
+                robot.blocker.setPosition(.5);
             }
-            //When B is pushed, motors will spin until the button is pressed again
-            if(gamepad1.b){
-                robot.leftLaunch.setPower(-1.0);
-                robot.rightLaunch.setPower(1.0);
-                telemetry.addData("Particle Gatherer","Engaged");
-                telemetry.update();
-                if(gamepad1.b){
-                    robot.leftLaunch.setPower(0);
-                    robot.rightLaunch.setPower(0);
-                    telemetry.addData("Particle Gatherer","Disengaged");
-                    telemetry.update();
-                }
+
+            if(lift){
+                robot.leftLift.setPower(.5);
+                robot.rightLift.setPower(.5);
             }
 
             // Pause for metronome tick.  40 mS each cycle = update 25 times a second.
