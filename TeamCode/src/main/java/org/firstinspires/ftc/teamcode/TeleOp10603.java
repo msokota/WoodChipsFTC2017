@@ -28,8 +28,9 @@ public class TeleOp10603 extends LinearOpMode {
         double max;
         boolean liftdrop;
         double lift;
-        boolean rBeacon;
-        boolean lBeacon;
+        //boolean rBeacon;
+        //boolean lBeacon;
+        //boolean beaconsBack;
 
         /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
@@ -49,9 +50,10 @@ public class TeleOp10603 extends LinearOpMode {
             left = gamepad1.left_stick_y;
             liftdrop = gamepad1.b;
             lift = gamepad2.right_stick_y;
-            rBeacon = gamepad1.right_bumper;
+           /* rBeacon = gamepad1.right_bumper;
             lBeacon = gamepad1.left_bumper;
-
+            beaconsBack = gamepad1.a;
+*/
             max = Math.max(Math.abs(left), Math.abs(right));
             if (max > 1.0)
             {
@@ -64,15 +66,26 @@ public class TeleOp10603 extends LinearOpMode {
             if(liftdrop){
                 robot.blocker.setPosition(.5);
             }
-
+/*
             if(rBeacon){
+                robot.rightBeacon.setPosition(.7);
+            }
+            if(!rBeacon){
                 robot.rightBeacon.setPosition(.5);
             }
 
             if(lBeacon){
+                robot.leftBeacon.setPosition(.7);
+            }
+            if(!lBeacon){
                 robot.leftBeacon.setPosition(.5);
             }
 
+            if(beaconsBack){
+                robot.leftBeacon.setPosition(.3);
+                robot.rightBeacon.setPosition(.3);
+            }
+*/
             robot.leftLift.setPower(lift);
             robot.rightLift.setPower(lift);
 
