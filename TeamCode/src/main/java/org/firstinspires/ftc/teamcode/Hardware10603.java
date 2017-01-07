@@ -28,8 +28,7 @@ public class Hardware10603
     public DcMotor  rightLift  = null;
     public DcMotor  leftPower   = null;
     public DcMotor  rightPower  = null;
-    public Servo    rightblocker    = null;
-    public Servo    leftblocker = null;
+    public Servo    blocker    = null;
     public Servo    leftBeacon = null;
     public Servo    rightBeacon = null;
 
@@ -52,8 +51,7 @@ public class Hardware10603
         rightLift  = hwMap.dcMotor.get("RL");
         leftPower   = hwMap.dcMotor.get("LP");
         rightPower  = hwMap.dcMotor.get("RP");
-        rightblocker = hwMap.servo.get("Rblock");
-        leftblocker = hwMap.servo.get("Lblock");
+        blocker = hwMap.servo.get("block");
         leftBeacon = hwMap.servo.get("LB");
         rightBeacon = hwMap.servo.get("RB");
         leftPower.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
