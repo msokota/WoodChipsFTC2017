@@ -58,7 +58,8 @@ public class TeleOp10603 extends LinearOpMode {
             robot.leftPower.setPower(left);
 
             if(liftdrop){
-                robot.blocker.setPosition(.5);
+                robot.rightblocker.setPosition(.5);
+                robot.leftblocker.setPosition(.5);
             }
 
             if(lift){
