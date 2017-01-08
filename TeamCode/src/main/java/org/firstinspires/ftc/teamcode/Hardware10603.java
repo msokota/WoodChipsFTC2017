@@ -24,11 +24,11 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class Hardware10603
 {
     /* Public OpMode members. */
-    public DcMotor  leftLift   = null;
-    public DcMotor  rightLift  = null;
+  //  public DcMotor  leftLift   = null;
+  //  public DcMotor  rightLift  = null;
     public DcMotor  leftPower   = null;
     public DcMotor  rightPower  = null;
-    public Servo    blocker    = null;
+ //   public Servo    blocker    = null;
 //    public Servo    leftBeacon = null;
   //  public Servo    rightBeacon = null;
 
@@ -47,17 +47,17 @@ public class Hardware10603
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftLift   = hwMap.dcMotor.get("LL");
-        rightLift  = hwMap.dcMotor.get("RL");
+     //   leftLift   = hwMap.dcMotor.get("LL");
+     //   rightLift  = hwMap.dcMotor.get("RL");
         leftPower   = hwMap.dcMotor.get("LP");
         rightPower  = hwMap.dcMotor.get("RP");
-        blocker = hwMap.servo.get("block");
+     //   blocker = hwMap.servo.get("block");
  //       leftBeacon = hwMap.servo.get("LB");
    //     rightBeacon = hwMap.servo.get("RB");
         leftPower.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightPower.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
-        leftLift.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
-        rightLift.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
+    //    leftLift.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
+      //  rightLift.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
 
         // Set all motors to zero power
         //leftLaunch.setPower(0);

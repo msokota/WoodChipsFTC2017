@@ -57,8 +57,8 @@ public class AutoOpRed extends LinearOpMode {
                     robot.rightPower.setPower(1.00);
                 }
                 else{*/
-                robot.leftPower.setPower(1.0);
-                robot.rightPower.setPower(-1.0);
+                robot.leftPower.setPower(.3);
+                robot.rightPower.setPower(-.3);
                 //}
             }
             else{

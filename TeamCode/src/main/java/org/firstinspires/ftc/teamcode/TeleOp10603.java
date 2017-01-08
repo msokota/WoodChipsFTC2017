@@ -26,8 +26,8 @@ public class TeleOp10603 extends LinearOpMode {
         double left;
         double right;
         double max;
-        boolean liftdrop;
-        double lift;
+      //  boolean liftdrop;
+      //  double lift;
         //boolean rBeacon;
         //boolean lBeacon;
         //boolean beaconsBack;
@@ -48,25 +48,25 @@ public class TeleOp10603 extends LinearOpMode {
         while (opModeIsActive()) {
             right = gamepad1.right_stick_y;
             left = gamepad1.left_stick_y;
-            liftdrop = gamepad1.b;
-            lift = gamepad2.right_stick_y;
+     //       liftdrop = gamepad1.b;
+      //      lift = gamepad2.right_stick_y;
            /* rBeacon = gamepad1.right_bumper;
             lBeacon = gamepad1.left_bumper;
             beaconsBack = gamepad1.a;
 */
             max = Math.max(Math.abs(left), Math.abs(right));
-            if (max > 1.0)
+            if (max > .25)
             {
                 left /= max;
                 right /= max;
             }
             robot.rightPower.setPower(right);
             robot.leftPower.setPower(left);
-
+/*
             if(liftdrop){
                 robot.blocker.setPosition(.5);
             }
-/*
+
             if(rBeacon){
                 robot.rightBeacon.setPosition(.7);
             }
@@ -85,10 +85,10 @@ public class TeleOp10603 extends LinearOpMode {
                 robot.leftBeacon.setPosition(.3);
                 robot.rightBeacon.setPosition(.3);
             }
-*/
+
             robot.leftLift.setPower(lift);
             robot.rightLift.setPower(lift);
-
+*/
 
             // Pause for metronome tick.  40 mS each cycle = update 25 times a second.
             robot.waitForTick(40);
