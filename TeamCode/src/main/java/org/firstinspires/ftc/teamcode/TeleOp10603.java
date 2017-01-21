@@ -1,6 +1,6 @@
 /*
     Team 10603's Hardware Testing OpMode
-        Written by John Gaidimas
+        Written by Molly Sokota
  */
 package org.firstinspires.ftc.teamcode;
 
