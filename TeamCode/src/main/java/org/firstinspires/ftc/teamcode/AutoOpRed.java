@@ -1,6 +1,6 @@
 /*
     Team 10603's AutoOpMode
-    Written by John Gaidimas
+    Written by Molly Sokota
  */
 package org.firstinspires.ftc.teamcode;
 
